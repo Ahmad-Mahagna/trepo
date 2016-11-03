@@ -1,0 +1,15 @@
+// show running docker containers
+ docker ps
+
+// show all docker containers 
+ docker ps -a
+
+// remove all containers 
+docker rm -f `docker ps -q -a`
+
+// run a container and connect to it
+docker run it imagename
+
+//run a ontainer with connect to it 
+docker run itd imagename
+
