@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   tasks:
-  - name: valid git
+  - name: valid git version 
     yum: name=git state=latest
     become: yes
     become_method: sudo
@@ -9,3 +9,15 @@
     git: repo=https://github.com/spring-projects/spring-petclinic.git dest=~/petclinic
   - name: clone trepo 
     git: repo=https://github.com/Ahmad-Mahagna/trepo.git dest=~/trepo update=no
+  - name: install docker
+    yum: name=docker state=latest
+    become: yes
+    become_method: sudo
+  - name: update user ec2-user with docker group permission
+    user: name=ec2-user group=docker append=yes
+    become: yes
+    become_method: sudo
+  - name: start docker daemon
+    service: name=docker state=started
+    become: yes
+    become_method: sudo
