@@ -6,7 +6,7 @@
     become: yes
     become_method: sudo
   - name: clone petclinic
-    git: repo=https://github.com/spring-projects/spring-petclinic.git dest=~/petclinic
+    git: repo=https://github.com/shimib/spring-petclinic.git dest=~/petclinic
   - name: clone trepo 
     git: repo=https://github.com/Ahmad-Mahagna/trepo.git dest=~/trepo update=no
   - name: install docker
